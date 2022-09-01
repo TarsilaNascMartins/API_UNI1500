@@ -1,4 +1,8 @@
 import { useState } from "react"
+import Button from 'react-bootstrap/Button';
+import ListGroup from 'react-bootstrap/ListGroup';
+import Container from 'react-bootstrap/Container';
+
 
 function ToDoList(){
 
@@ -31,21 +35,23 @@ setListTodos(newList);
 return <>
 
 <form onSubmit={(event)=>(addToList(event))}>
-<input type= "text" onChange={(event)=> {setTexto(event.target.value)}}></input>
-<input type= "submit"></input>
-</form>
+  
+<center>< input type= "text" size={150}  placeholder="Adicione" onChange={(event)=> {setTexto(event.target.value)}}></input>
+<Button variant="primary" input type= "submit" > + </Button></center>
 
-<ul>
+
+</form>
+<ListGroup variant = "flush">
 {listToDos.map((item) =>
 
-<li key={item.id}>{item.texto}
-<button onClick={()=>(removeFromList (item.id))}>Remover</button>
-</li>
+<ListGroup.Item key={item.id}>{item.texto}
+<Button variant = "dark" onClick={()=>(removeFromList (item.id))}>Remover</Button>
+</ListGroup.Item>
 )
 
 }
 
-</ul>
+</ListGroup>
 
 </>
 
