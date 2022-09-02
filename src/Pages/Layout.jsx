@@ -4,6 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import mainLogo from'./logo.png';
 import Form from 'react-bootstrap/Form';
+
 const Layout =()=>{
     return <>
 
@@ -18,6 +19,8 @@ const Layout =()=>{
             <Nav.Link><Link to ="/">Home</Link></Nav.Link>
             <Nav.Link><Link to ="/carros">Carros</Link></Nav.Link>
             <Nav.Link><Link to ="/todolist">To do List</Link></Nav.Link>
+            <Nav.Link><Link to ="/auth">Login</Link></Nav.Link>
+
        </Nav>
         </Container>
       </Navbar>
