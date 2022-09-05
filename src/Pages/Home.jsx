@@ -5,10 +5,10 @@ import CarroImage from "./Carro_Login.png"
    
  <div>
       <center>
-   <h1><b>Bem-vindo ao Cadastro de Clientes!</b></h1>
+   <p><h1><b>Bem-vindo ao Cadastro de Clientes!</b></h1></p>
     <p>Selecione acima a aba "Clientes" para cadastrar.</p>
 <p></p>
-    <img style={{ width:1000}} src={CarroImage} alt="Carro Login" />  
+    <img style={{ width:700}} src={CarroImage} alt="Carro Login" />  
 
 </center> 
 </div>

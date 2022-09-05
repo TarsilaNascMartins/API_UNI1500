@@ -6,9 +6,10 @@ import Cars from "./Pages/Car";
 import NotFound from "./Pages/NotFound";
 import ToDoList from "./Components/ToDoList/ToDoList";
 import Auth from "./Pages/Auth";
+import Carro from "./Components/Carro/Carro";
 
 function App() {
-  return (
+  return <>(
     <BrowserRouter>
     <Routes>
         <Route path="/" element={<Layout/>}>
@@ -21,6 +22,8 @@ function App() {
 
     </Routes>
   </BrowserRouter>
-);
+
+  </>
+
 }
 export default App;

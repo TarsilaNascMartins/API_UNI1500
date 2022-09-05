@@ -1,5 +1,7 @@
 import CarrosList from "../Components/CarList.jsx";
+import Carro from "./../Components/Carro/Carro";
+
 function Cars(){
-    return <CarrosList/>
+    return <Carro/>
 }
 export default Cars

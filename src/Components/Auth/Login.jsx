@@ -11,7 +11,7 @@ import { useState } from 'react';
 import {useNavigate} from 'react-router-dom';
 
 function Login() {
-    const [user, setUser] = useState({ email: "", senha: "" });
+    const [user, setUser] = useState({ email: "", password: "" });
 
     const navigate = useNavigate();
 
@@ -24,6 +24,8 @@ function Login() {
         })
 
     }
+
+    
 
     async function sendLogin(event) {
         event.preventDefault();
@@ -55,7 +57,9 @@ function Login() {
             <Stack gap={2} className="col-md-5 mx-auto">
                 <Container>
 
-                    <img style={{ width: 600 }} src={CarroImage} alt="Carro Login" />
+                <center><p><h1>LOGIN</h1></p>
+
+                    <img style={{ width: 300 }} src={CarroImage} alt="Carro Login" /> </center>
                     <Row>
                         <Form class="px-2" onSubmit={(event) => sendLogin(event)}>
 
@@ -80,7 +84,7 @@ function Login() {
                     </Row>
                 </Container>
             </Stack>
-
+<p></p>
         </>
     }
 
