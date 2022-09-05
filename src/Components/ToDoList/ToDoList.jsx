@@ -35,9 +35,11 @@ setListTodos(newList);
 return <>
 
 <form onSubmit={(event)=>(addToList(event))}>
-  
-<center>< input type= "text" size={150}  placeholder="Adicione" onChange={(event)=> {setTexto(event.target.value)}}></input>
-<Button variant="primary" input type= "submit" > + </Button></center>
+
+<center>
+    <p></p>
+    < input type= "text" size={150}  placeholder="Adicione" onChange={(event)=> {setTexto(event.target.value)}}></input>
+<Button variant="success" input type= "submit" > + </Button></center>
 
 
 </form>
