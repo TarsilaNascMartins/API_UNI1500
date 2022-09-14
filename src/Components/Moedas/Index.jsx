@@ -3,8 +3,12 @@ import {getMoedas,deleteMoeda} from './../../Services/Moedas'
 import{useState,useEffect} from 'react'
 import Table from 'react-bootstrap/Table';
 import{Button} from 'react-bootstrap';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 
-function Index({setComponenteAtual}){
+function Index({setComponenteAtual,setIdMoedaEdit}){
 
     const [moedas,setMoedas] = useState([]);
     const [isLoading,setIsLoading]= useState(true);
@@ -21,19 +25,42 @@ function Index({setComponenteAtual}){
 
     }
 
-return <div className="d-flex flex-column align-items-center m-3">
-<h1>Moedas</h1>
-<Button variant="success" className='mb-2' onClick={()=>{ setComponenteAtual("Create")}}> Criar nova moeda </Button>
-<Table striped bordered hover variant='secondary'>
+    const setToEdit=(idMoeda)=>{
+
+
+        setIdMoedaEdit(idMoeda);
+        setComponenteAtual('Edit');
+
+    }
+
+
+
+
+
+return <div className='m-3'>
+<center>
+<Row>
+  <Col  xs={10} >
+    <h1>Moedas</h1> 
+</Col>
+
+
+     <Col   >
+<Button variant="success" className='mb-2' onClick={()=>{ setComponenteAtual("Create")}}> + Criar nova moeda </Button>
+</Col>
+</Row></center>
+<div className="d-flex flex-column align-items-center m-3">
+<Table striped bordered hover variant='light'>
 
 <thead variant = "dark">
 
     <tr >
-        <td>Id</td>
-        <td> Nome</td>
-        <td>Paises</td>
-        <td>Opções</td>
        
+        <td><b>Id</b></td>
+        <td><b>Nome</b></td>
+        <td><b>Paises</b></td>
+        <td><b>Opções</b></td>
+    
 
     </tr>
 
@@ -54,7 +81,21 @@ return <div className="d-flex flex-column align-items-center m-3">
                         )}
                     </ul>
                </td>
-               <td><Button variant= "danger" onClick={()=> {removeMoeda(moeda.id)}}>Deletar</Button></td>
+               <td >
+               <Dropdown>
+        <Dropdown.Toggle id="dropdown-button-dark-example1" variant="secondary">Opções</Dropdown.Toggle>
+
+        <Dropdown.Menu variant="dark">
+          <Dropdown.Item  onClick={()=> {removeMoeda(moeda.id)}}>
+            Deletar
+          </Dropdown.Item>
+          <Dropdown.Item  onClick={()=> {setToEdit(moeda.id)}}>Editar</Dropdown.Item>
+          
+        </Dropdown.Menu>
+      </Dropdown>
+
+
+               </td>
         </tr>
 
    } )
@@ -67,7 +108,7 @@ return <div className="d-flex flex-column align-items-center m-3">
 
 </Table>
 </div>
-
+</div>
 
 }
 

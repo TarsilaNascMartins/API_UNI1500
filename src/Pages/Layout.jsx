@@ -21,6 +21,7 @@ const Layout =()=>{
             <Nav.Link><Link to ="/todolist">To do List</Link></Nav.Link>
             <Nav.Link><Link to ="/auth">Login</Link></Nav.Link>
             <Nav.Link><Link to ="/moeda">Moedas</Link></Nav.Link>
+            <Nav.Link><Link to ="/contasContabeis">Contas Contabeis</Link></Nav.Link>
        </Nav>
         </Container>
       </Navbar>

@@ -78,7 +78,7 @@ function Login({setShowRegister}) {
                             </Form.Group>
                            
                             <Button variant="dark" type="submit">Login</Button>
-                         <Button variant="success" onClick={()=>setShowRegister((lastState)=>!lastState)}>Já possuo conta</Button>
+                         <Button variant="success" className='m-2' onClick={()=>setShowRegister((lastState)=>!lastState)}>Já possuo conta</Button>
                             
 
 

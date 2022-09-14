@@ -89,7 +89,7 @@ return<>
 
                             
                           
-                            <Button variant="success" onClick={()=>setShowRegister((lastState)=>!lastState)}>Cadastrar nova conta</Button>
+                            <Button variant="success" className='m-2' onClick={()=>setShowRegister((lastState)=>!lastState)}>Cadastrar nova conta</Button>
 
 
                         </Form>

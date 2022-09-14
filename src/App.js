@@ -7,7 +7,7 @@ import NotFound from "./Pages/NotFound";
 import ToDoList from "./Components/ToDoList/ToDoList";
 import Auth from "./Pages/Auth";
 import Moeda from "./Pages/Moeda";
-
+import ContasContabeis from "./Pages/ContasContabeis";
 function App() {
   return <>(
     <BrowserRouter>
@@ -19,6 +19,7 @@ function App() {
                 <Route path="todolist" element={<ToDoList/>}/>
                 <Route path="auth" element={<Auth/>}/>
                 <Route path="moeda" element={<Moeda/>}/>
+                <Route path="contasContabeis" element={<ContasContabeis/>}/>
         </Route>
 
     </Routes>

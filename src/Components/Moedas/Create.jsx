@@ -53,7 +53,7 @@ console.log(getMoedas());
    
     <Form className="col-3 mt-5">
       <center> <h2>Cadastro de Moedas</h2></center>
-     <center> <img src="https://www.despachantedok.com.br/assets/images/landingpage/emprestimoGarantiaSeo/ilustracao-carro-documento-moeda.png"alt="Image" height= "150" width="200"></img>
+     <center> <img src="https://edufinance.com.br/wp-content/uploads/2020/10/moeda.png"alt="Image" height= "150" width="200"></img>
       </center><Form.Group className="mb-3" controlId="formBasicEmail">
         
         <Form.Control onChange={((e)=>setName(e.target.value))} name='name' type="moeda" placeholder="Insira o tipo de Moeda" />
@@ -74,8 +74,8 @@ console.log(getMoedas());
        
 
       </Form.Group>
-      <Button variant="success" type="submit" onClick = {(event)=> create (event)}>Enviar</Button>
-      <Button variant="success" onClick={()=>{ setComponenteAtual("Index")}}> Voltar </Button>
+      <Button variant="dark"  type="submit" onClick = {(event)=> create (event)}>Enviar</Button>
+      <Button variant="success"className='m-2' onClick={()=>{ setComponenteAtual("Index")}}> Voltar </Button>
     </Form></div></p>
   );
 

@@ -36,6 +36,19 @@ export const deleteMoeda = (id) =>{
 
 }
 
+export const getMoeda = (id)=>{
+
+    let moedas = getMoedas();
+
+    // === => obter igualdade do valor e do tipo 
+    return moedas.find((moeda)=> moeda.id === id);
+
+
+}
+
+
+
+
 export const getMoedas = () =>{
 
 let moedas = JSON.parse(localStorage.getItem(moedaKey))
@@ -45,4 +58,14 @@ if(typeof moedas == 'undefined' || moedas === null){
 }
 
     return moedas
+}
+
+export const saveEdit = (id,moeda) =>{
+        const moedas = getMoedas();
+
+        const moedaIndex = moedas.findIndex((moedaToEdit)=>moedaToEdit.id===id);
+
+        moedas[moedaIndex].nome = moeda.nome;
+        moedas[moedaIndex].paises = moeda.paises;
+        localStorage.setItem(moedaKey,JSON.stringify(moedas))
 }
