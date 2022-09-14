@@ -6,7 +6,7 @@ import Cars from "./Pages/Car";
 import NotFound from "./Pages/NotFound";
 import ToDoList from "./Components/ToDoList/ToDoList";
 import Auth from "./Pages/Auth";
-import Carro from "./Components/Carro/Carro";
+import Moeda from "./Pages/Moeda";
 
 function App() {
   return <>(
@@ -18,6 +18,7 @@ function App() {
                 <Route path="*" element={<NotFound/>}/>
                 <Route path="todolist" element={<ToDoList/>}/>
                 <Route path="auth" element={<Auth/>}/>
+                <Route path="moeda" element={<Moeda/>}/>
         </Route>
 
     </Routes>

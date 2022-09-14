@@ -11,7 +11,7 @@ import { setToken, getToken } from "./../../Services/Auth"
 import { register } from '../../API/AuthApi';
 import {useNavigate} from 'react-router-dom';
 
-function Registro(){
+function Registro({setShowRegister}){
 
 const [user, setUser] = useState({ email: "", password: "" });
 
@@ -86,6 +86,10 @@ return<>
                             </Form.Group>
 
                             <Button variant="dark" type="submit">Cadastro</Button>
+
+                            
+                          
+                            <Button variant="success" onClick={()=>setShowRegister((lastState)=>!lastState)}>Cadastrar nova conta</Button>
 
 
                         </Form>

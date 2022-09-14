@@ -10,21 +10,13 @@ function Auth(){
     const [showRegister,setShowRegister] = useState(false)
 
    if(!showRegister){
-
-   return <><Login/> 
-
-<p><Stack gap={2} className="col-md-5 mx-auto">
-   <Button variant="success" onClick={()=>setShowRegister(!showRegister)}>Cadastrar nova conta</Button></Stack></p>
-
+   return <><Login setShowRegister ={setShowRegister}/> 
    </>
    }
    else{
       return <>
+  <Registro setShowRegister = {setShowRegister}/>
   
-  <Registro/>
-  <p><Stack gap={2} className="col-md-5 mx-auto"> 
-   <Button variant="success" onClick={()=>setShowRegister(!showRegister)}>Já possuo cadastro</Button></Stack></p>
-   
          </> 
    
    }

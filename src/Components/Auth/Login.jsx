@@ -10,7 +10,7 @@ import { login } from "./../../API/AuthApi"
 import { useState } from 'react';
 import {useNavigate} from 'react-router-dom';
 
-function Login() {
+function Login({setShowRegister}) {
     const [user, setUser] = useState({ email: "", password: "" });
 
     const navigate = useNavigate();
@@ -76,8 +76,10 @@ function Login() {
 
                                 <Form.Text className="text-muted"> Nós não iremos compartilhar seu email com ninguém. </Form.Text>
                             </Form.Group>
-
+                           
                             <Button variant="dark" type="submit">Login</Button>
+                         <Button variant="success" onClick={()=>setShowRegister((lastState)=>!lastState)}>Já possuo conta</Button>
+                            
 
 
                         </Form>
