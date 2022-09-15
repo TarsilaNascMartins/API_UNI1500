@@ -11,8 +11,8 @@ import Dropdown from 'react-bootstrap/Dropdown';
 
 function Index({setComponenteAtual,setContaContabilEdit}){
 
-    const [setContasContabeis,contasContabeis] = useState([]);
-    const [setIsLoading]= useState(true);
+    const [contasContabeis,setContasContabeis] = useState([]);
+    const [isLoading, setIsLoading]= useState(true);
 
     useEffect(() =>  {
         setContasContabeis(getContasContabeis());

@@ -8,19 +8,19 @@ export const saveContasContabeis = (contaContabeis) =>{
         contasContabeis = [];
     }
 
-    if(contaContabeis.length== 0){
-        contasContabeis.id = 1;
+    if(contasContabeis.length== 0){
+        contaContabeis.id = 1;
     
     }else {
 
-    const maxId = Math.max.apply(Math, contaContabeis.map(function(o){return o.id; }))
+    const maxId = Math.max.apply(Math, contasContabeis.map(function(o){return o.id; }))
 
       contaContabeis.id=maxId+1;
     
     }
 
-contaContabeis.push(contaContabeis);
-localStorage.setItem(contasContabeisKey, JSON.stringify(contaContabeis))
+contasContabeis.push(contaContabeis);
+localStorage.setItem(contasContabeisKey, JSON.stringify(contasContabeis))
 }
 
 

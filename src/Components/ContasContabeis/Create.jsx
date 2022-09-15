@@ -17,7 +17,7 @@ nRef:'',
 
 })
 
-const updateContaContabil = (event,contaContabil) =>{
+const UpdateContaContabil = (event,contaContabil) =>{
 
 const value = event.target.value;
 
@@ -75,11 +75,12 @@ return (
     <center> <img src="https://edufinance.com.br/wp-content/uploads/2020/10/moeda.png"alt="Image" height= "150" width="200"></img>
      </center><Form.Group className="mb-3" controlId="formBasicEmail">
        
-       <Form.Control onChange={((e)=>setName(e.target.value))} name='name' type="contaContabil" placeholder="Insira o tipo de Moeda" />
+       <Form.Control onChange={((e)=>setName(e.target.value))} name='name' type="contaContabil" placeholder="Insira o nome da Conta Contabil" />
        <Form.Text className="text-muted">
        </Form.Text>
-       <Form.Label>Paises</Form.Label>
-      
+       <Form.Control onChange={((e)=>setNREF(e.target.value))} name='nRef' type="contaContabil" placeholder="Insira o numero de referência" />
+       <Form.Text className="text-muted">
+       </Form.Text>
        
        
       
