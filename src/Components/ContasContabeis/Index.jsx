@@ -11,7 +11,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 
 function Index({setComponenteAtual,setContaContabilEdit}){
 
-    const [contasContabeis,setContasContabeis] = useState([]);
+    const [contaContabeis,setContasContabeis] = useState([]);
     const [isLoading, setIsLoading]= useState(true);
 
     useEffect(() =>  {
@@ -66,19 +66,19 @@ const setToEdit=(idContaContabil)=>{
         
     </thead>
     <tbody>
-       {contasContabeis.map((contaContabil)=>{
+       {contaContabeis.map((contaContabeis)=>{
     
-          return   <tr key={contaContabil.key}>
-                    <td>{contaContabil.id} </td>
-                    <td>{contaContabil.nome} </td>
-                    <td>{contaContabil.nRef} </td>
+          return   <tr key={contaContabeis.key}>
+                    <td>{contaContabeis.id} </td>
+                    <td>{contaContabeis.nome} </td>
+                    <td>{contaContabeis.nRef} </td>
                    <td >
                    <Dropdown>
             <Dropdown.Toggle id="dropdown-button-dark-example1" variant="secondary">Opções</Dropdown.Toggle>
     
             <Dropdown.Menu variant="dark">
-              <Dropdown.Item  onClick={()=> {removeContaContabil(contasContabeis.id)}}>Deletar</Dropdown.Item>
-              <Dropdown.Item  onClick={()=> {setToEdit(contasContabeis.id)}}>Editar</Dropdown.Item>
+              <Dropdown.Item  onClick={()=> {removeContaContabil(contaContabeis.id)}}>Deletar</Dropdown.Item>
+              <Dropdown.Item  onClick={()=> {setToEdit(contaContabeis.id)}}>Editar</Dropdown.Item>
               
             </Dropdown.Menu>
           </Dropdown>

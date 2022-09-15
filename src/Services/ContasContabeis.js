@@ -4,7 +4,7 @@ export const saveContasContabeis = (contaContabeis) =>{
 
     let contasContabeis = getContasContabeis();
 
-    if (!Array.isArray(contaContabeis)){
+    if (!Array.isArray(contasContabeis)){
         contasContabeis = [];
     }
 
@@ -26,9 +26,9 @@ localStorage.setItem(contasContabeisKey, JSON.stringify(contasContabeis))
 
 export const deleteContasContabeis = (id) =>{
 
-   const contaContabeis = getContasContabeis();
+   const contasContabeis = getContasContabeis();
 
-    const newContasContabeis = contaContabeis.filter((contaContabel)=> contaContabel.id!==id);
+    const newContasContabeis = contasContabeis.filter((contaContabeis)=> contaContabeis.id!==id);
     localStorage.setItem(contasContabeisKey, JSON.stringify(newContasContabeis))
 
 }
@@ -57,12 +57,12 @@ if(typeof contasContabeis == 'undefined' || contasContabeis === null){
     return contasContabeis
 }
 
-export const saveEdit = (id,contaContabil) =>{
+export const saveEdit = (id,contaContabeis) =>{
         const contasContabeis = getContasContabeis();
 
         const contaContabilIndex = contasContabeis.findIndex((contaContabilToEdit)=>contaContabilToEdit.id===id);
 
-        contasContabeis[contaContabilIndex].nome = contaContabil.nome;
-        contasContabeis[contaContabilIndex].paises = contaContabil.paises;
+        contasContabeis[contaContabilIndex].nome = contaContabeis.nome;
+        contasContabeis[contaContabilIndex].paises = contaContabeis.paises;
         localStorage.setItem(contasContabeisKey,JSON.stringify(contasContabeis))
 }
