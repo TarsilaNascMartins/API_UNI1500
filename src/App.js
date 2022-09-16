@@ -8,6 +8,10 @@ import ToDoList from "./Components/ToDoList/ToDoList";
 import Auth from "./Pages/Auth";
 import Moeda from "./Pages/Moeda";
 import ContasContabeis from "./Pages/ContasContabeis";
+import Clientes from "./Pages/Clientes";
+import Funcionario from "./Pages/Funcionarios";
+import Transacoes from "./Pages/Transacoes";
+
 function App() {
   return <>(
     <BrowserRouter>
@@ -20,6 +24,9 @@ function App() {
                 <Route path="auth" element={<Auth/>}/>
                 <Route path="moeda" element={<Moeda/>}/>
                 <Route path="contasContabeis" element={<ContasContabeis/>}/>
+                <Route path="cliente" element={<Clientes/>}/>
+                <Route path="funcionario" element={<Funcionario/>}/>
+                <Route path="transacoes" element={<Transacoes/>}/>
         </Route>
 
     </Routes>

@@ -35,10 +35,10 @@ export const deleteContasContabeis = (id) =>{
 
 export const getContaContabil = (id)=>{
 
-    let contasContabeis = getContasContabeis();
+    let contaContabeis = getContasContabeis();
 
     // === => obter igualdade do valor e do tipo 
-    return contasContabeis.find((contaContabil)=> contaContabil.id === id);
+    return contaContabeis.find((contaContabeis)=> contaContabeis.id === id);
 
 
 }
@@ -63,6 +63,6 @@ export const saveEdit = (id,contaContabeis) =>{
         const contaContabilIndex = contasContabeis.findIndex((contaContabilToEdit)=>contaContabilToEdit.id===id);
 
         contasContabeis[contaContabilIndex].nome = contaContabeis.nome;
-        contasContabeis[contaContabilIndex].paises = contaContabeis.paises;
+        contasContabeis[contaContabilIndex].nRef = contaContabeis.numRef;
         localStorage.setItem(contasContabeisKey,JSON.stringify(contasContabeis))
 }

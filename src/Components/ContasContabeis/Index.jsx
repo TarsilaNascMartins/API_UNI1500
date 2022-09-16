@@ -21,19 +21,14 @@ function Index({setComponenteAtual,setContaContabilEdit}){
     , [])
 
     const removeContaContabil = (id)=>{
-
         deleteContasContabeis(id);
         setContasContabeis(getContasContabeis());
-
 }
 
 
 const setToEdit=(idContaContabil)=>{
-
-
     setContaContabilEdit(idContaContabil);
     setComponenteAtual('Edit');
-
 }
 
     return <div className='m-3'>

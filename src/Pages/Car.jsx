@@ -1,4 +1,4 @@
-import CarrosList from "../Components/CarList.jsx";
+import CarrosList from "../Components/Carro/CarList.jsx";
 import Carro from "./../Components/Carro/Carro";
 
 function Cars(){

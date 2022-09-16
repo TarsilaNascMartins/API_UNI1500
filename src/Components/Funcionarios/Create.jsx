@@ -1,30 +1,27 @@
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import {saveContasContabeis,getContaContabil} from  './../../Services/ContasContabeis'
+import {saveFuncionarios,getFuncionarios} from  './../../Services/Funcionarios'
 
 function Create({setComponenteAtual}){
 
   const [name,setName] = useState ("");
-
-  const [numRef, setNREF] = useState([]);
-
-
+  const [cpf, setCPF] = useState([]);
+  
 
 const create = (event) => {
   event.preventDefault();
-  const contaContabil = {
+  const funcionario = {
     nome: name,
-    
-     nRef: numRef,
+    ncpf: cpf,
 
   }
 
-saveContasContabeis(contaContabil);
+saveFuncionarios(funcionario);
 
 setComponenteAtual("Index");
 
-console.log(getContaContabil());
+console.log(getFuncionarios());
 
 }
 
@@ -36,14 +33,17 @@ return (
    <div className="d-flex flex-column align-items-center">
   
    <Form className="col-3 mt-5">
-     <center> <h2>Cadastro Conta Contabeis</h2></center>
-    <center> <img src="https://edufinance.com.br/wp-content/uploads/2020/10/moeda.png"alt="Image" height= "150" width="200"></img>
+     <center> <h2>Cadastro de Funcionários</h2></center>
+    <center> <img src="https://cdn3d.iconscout.com/3d/premium/thumb/id-card-5167945-4319404.png"alt="Image" height= "150" width="150"></img>
      </center><Form.Group className="mb-3" controlId="formBasicEmail">
        
-       <Form.Control onChange={((e)=>setName(e.target.value))} name='name' type="contaContabil" placeholder="Insira o nome da Conta Contabil" />
+       <Form.Label>Nome Funcionário</Form.Label>
+       <Form.Control  onChange={((e)=>setName(e.target.value))}  name='name' type="funcionario" placeholder="Insira o nome do funcionário" />
        <Form.Text className="text-muted">
        </Form.Text>
-       <Form.Control onChange={((e)=>setNREF(e.target.value))} name='nRef' type="contaContabil" placeholder="Insira o numero de referência" />
+
+       <Form.Label>Número Matrícula</Form.Label>
+       <Form.Control  onChange={((e)=>setCPF(e.target.value))} name='cpf' type="funcionario" placeholder="Insira a matrícula" />
        <Form.Text className="text-muted">
        </Form.Text>
        
