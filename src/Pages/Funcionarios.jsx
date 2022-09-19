@@ -1,6 +1,6 @@
-import Create from "./../Components/Funcionarios/Create"
-import Index from "./../Components/Funcionarios/Index";
-
+import Create from "../Components/Funcionarios/Create"
+import Index from "../Components/Funcionarios/Index";
+import Edit from "../Components/Funcionarios/Edit";
 import {useState} from 'react'
 
 function Funcionarios(){
@@ -11,11 +11,13 @@ function Funcionarios(){
 
     switch (componenteAtual){
     case"Index":
-     return <Index setComponenteAtual ={setComponenteAtual} setIdClienteEdit = {setIdFuncionarioEdit}/>
+     return <Index setComponenteAtual ={setComponenteAtual} setIdFuncionarioEdit = {setIdFuncionarioEdit}/>
         
      case "Create":
         return<Create setComponenteAtual ={setComponenteAtual}/>
 
+        case "Edit":
+            return<Edit setComponenteAtual ={setComponenteAtual} idFuncionario={idFuncionarioEdit}/>
       
             default:
                 return <Index setComponenteAtual = {setComponenteAtual}/>

@@ -8,7 +8,7 @@ import Col from 'react-bootstrap/Col';
 import Dropdown from 'react-bootstrap/Dropdown';
 
 
-function Index({setComponenteAtual,setClienteEdit}){
+function Index({setComponenteAtual,setIdClienteEdit}){
 
     const [clientes,setClientes] = useState([]);
     const [isLoading,setIsLoading]= useState(true);
@@ -25,8 +25,9 @@ function Index({setComponenteAtual,setClienteEdit}){
     }
 
     const setToEdit=(idCliente)=>{
-        setClienteEdit(idCliente);
+        setIdClienteEdit(idCliente);
         setComponenteAtual('Edit');
+        console.log("edit")
     }
 
 

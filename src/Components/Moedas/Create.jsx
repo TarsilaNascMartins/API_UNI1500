@@ -53,7 +53,7 @@ console.log(getMoedas());
    
     <Form className="col-3 mt-5">
       <center> <h2>Cadastro de Moedas</h2></center>
-     <center> <img src="https://edufinance.com.br/wp-content/uploads/2020/10/moeda.png"alt="Image" height= "150" width="200"></img>
+     <center> <img src="https://cdn3d.iconscout.com/3d/premium/thumb/wallet-4727264-3928181.png"alt="Image" height= "150" width="150"></img>
       </center><Form.Group className="mb-3" controlId="formBasicEmail">
         
         <Form.Control onChange={((e)=>setName(e.target.value))} name='name' type="moeda" placeholder="Insira o tipo de Moeda" />

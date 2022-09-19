@@ -7,14 +7,9 @@ import mainLogo from'./logo.png';
 
 const Layout =()=>{
     return <>
-
-
-   
       <Navbar bg="dark" variant="dark" >
         <Container>
-        
         <img style={{ width: 150, height:70 }} src={mainLogo} alt="React Logo" />  
-     
           <Nav className="me-auto my-2 my-lg-0">
             <Nav.Link><Link to ="/">Home</Link></Nav.Link>
             <Nav.Link><Link to ="/carros">Carros</Link></Nav.Link>
@@ -28,12 +23,7 @@ const Layout =()=>{
        </Nav>
         </Container>
       </Navbar>
-
-        
-
  <Outlet/>
-
-
 
     </>
   

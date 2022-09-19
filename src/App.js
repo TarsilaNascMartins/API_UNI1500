@@ -13,7 +13,7 @@ import Funcionario from "./Pages/Funcionarios";
 import Transacoes from "./Pages/Transacoes";
 
 function App() {
-  return <>(
+  return <>
     <BrowserRouter>
     <Routes>
         <Route path="/" element={<Layout/>}>

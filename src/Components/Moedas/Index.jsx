@@ -6,7 +6,7 @@ import{Button} from 'react-bootstrap';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
+
 
 function Index({setComponenteAtual,setIdMoedaEdit}){
 
@@ -26,15 +26,9 @@ function Index({setComponenteAtual,setIdMoedaEdit}){
     }
 
     const setToEdit=(idMoeda)=>{
-
-
         setIdMoedaEdit(idMoeda);
         setComponenteAtual('Edit');
-
     }
-
-
-
 
 
 return <div className='m-3'>
@@ -43,9 +37,7 @@ return <div className='m-3'>
   <Col  xs={10} >
     <h1>Moedas</h1> 
 </Col>
-
-
-     <Col   >
+<Col>
 <Button variant="success" className='mb-2' onClick={()=>{ setComponenteAtual("Create")}}> + Criar nova moeda </Button>
 </Col>
 </Row></center>
@@ -53,19 +45,14 @@ return <div className='m-3'>
 <Table striped bordered hover variant='light'>
 
 <thead variant = "dark">
-
-    <tr >
-       
+    <tr >   
         <td><b>Id</b></td>
         <td><b>Nome</b></td>
         <td><b>Paises</b></td>
         <td><b>Opções</b></td>
-    
-
     </tr>
-
-    
 </thead>
+
 <tbody>
    { !isLoading && moedas.map((moeda)=>{
 
@@ -90,22 +77,15 @@ return <div className='m-3'>
             Deletar
           </Dropdown.Item>
           <Dropdown.Item  onClick={()=> {setToEdit(moeda.id)}}>Editar</Dropdown.Item>
-          
         </Dropdown.Menu>
       </Dropdown>
-
-
                </td>
         </tr>
-
    } )
 
    }
 
 </tbody>
-
-
-
 </Table>
 </div>
 </div>

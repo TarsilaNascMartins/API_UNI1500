@@ -63,6 +63,6 @@ export const saveEdit = (id,contaContabeis) =>{
         const contaContabilIndex = contasContabeis.findIndex((contaContabilToEdit)=>contaContabilToEdit.id===id);
 
         contasContabeis[contaContabilIndex].nome = contaContabeis.nome;
-        contasContabeis[contaContabilIndex].nRef = contaContabeis.numRef;
+        contasContabeis[contaContabilIndex].nref = contaContabeis.nref;
         localStorage.setItem(contasContabeisKey,JSON.stringify(contasContabeis))
 }

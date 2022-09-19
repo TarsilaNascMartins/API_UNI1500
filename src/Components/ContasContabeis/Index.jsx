@@ -66,7 +66,7 @@ const setToEdit=(idContaContabil)=>{
           return   <tr key={contaContabeis.key}>
                     <td>{contaContabeis.id} </td>
                     <td>{contaContabeis.nome} </td>
-                    <td>{contaContabeis.nRef} </td>
+                    <td>{contaContabeis.nref} </td>
                    <td >
                    <Dropdown>
             <Dropdown.Toggle id="dropdown-button-dark-example1" variant="secondary">Opções</Dropdown.Toggle>

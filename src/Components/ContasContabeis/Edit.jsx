@@ -18,7 +18,7 @@ function Edit({setComponenteAtual,idContaContabil}){
 )
     const [name,setName] = useState ("");
 
-  const [nRef, setNREF] = useState([]);
+  const [nref, setNREF] = useState([]);
 
 
 //RETORNANDO OS VALORES QUE ESTAVAM DEFINIDOS
@@ -49,7 +49,7 @@ function Edit({setComponenteAtual,idContaContabil}){
             event.preventDefault();
             const contaContabil = {
               nome: name,
-              nref: nRef,
+              nref,
           
             }
         
@@ -73,10 +73,10 @@ function Edit({setComponenteAtual,idContaContabil}){
               <center> <img src="https://edufinance.com.br/wp-content/uploads/2020/10/moeda.png"alt="Image" height= "150" width="200"></img>
                </center><Form.Group className="mb-3" controlId="formBasicEmail">
                  
-                 <Form.Control onChange={(event)=>{updateContaContabil(event)}} name='name' type="contaContabil" placeholder="Insira o nome da Conta Contabil" />
+                 <Form.Control value = {name} onChange={(event)=>{updateContaContabil(event)}} name='name' type="contaContabil" placeholder="Insira o nome da Conta Contabil" />
                  <Form.Text className="text-muted">
                  </Form.Text>
-                 <Form.Control  onChange={(event)=>{updateContaContabil(event)}} name='nref' type="contaContabil" placeholder="Insira o numero de referência" />
+                 <Form.Control value = {nref} onChange={(event)=>{updateContaContabil(event)}} name='nref' type="contaContabil" placeholder="Insira o numero de referência" />
                  <Form.Text className="text-muted">
                  </Form.Text>
                  

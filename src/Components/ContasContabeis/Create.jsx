@@ -7,7 +7,7 @@ function Create({setComponenteAtual}){
 
   const [name,setName] = useState ("");
 
-  const [numRef, setNREF] = useState([]);
+  const [nref, setNREF] = useState([]);
 
 
 
@@ -16,7 +16,7 @@ const create = (event) => {
   const contaContabil = {
     nome: name,
     
-     nRef: numRef,
+     nref,
 
   }
 
@@ -43,7 +43,7 @@ return (
        <Form.Control onChange={((e)=>setName(e.target.value))} name='name' type="contaContabil" placeholder="Insira o nome da Conta Contabil" />
        <Form.Text className="text-muted">
        </Form.Text>
-       <Form.Control onChange={((e)=>setNREF(e.target.value))} name='nRef' type="contaContabil" placeholder="Insira o numero de referência" />
+       <Form.Control onChange={((e)=>setNREF(e.target.value))} name='nref' type="contaContabil" placeholder="Insira o numero de referência" />
        <Form.Text className="text-muted">
        </Form.Text>
        

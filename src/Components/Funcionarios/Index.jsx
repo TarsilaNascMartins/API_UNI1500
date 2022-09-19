@@ -7,7 +7,7 @@ import Col from 'react-bootstrap/Col';
 import Dropdown from 'react-bootstrap/Dropdown';
 
 
-function Index({setComponenteAtual,setFuncionarioEdit}){
+function Index({setComponenteAtual,setIdFuncionarioEdit}){
 
     const [funcionarios,setFuncionarios] = useState([]);
     const [isLoading,setIsLoading]= useState(true);
@@ -22,10 +22,11 @@ function Index({setComponenteAtual,setFuncionarioEdit}){
             deleteFuncionario(id);
             setFuncionarios(getFuncionarios());
     }
-
+    
     const setToEdit=(idFuncionario)=>{
-        setFuncionarioEdit(idFuncionario);
+        setIdFuncionarioEdit(idFuncionario);
         setComponenteAtual('Edit');
+        console.log("edit")
     }
 
 

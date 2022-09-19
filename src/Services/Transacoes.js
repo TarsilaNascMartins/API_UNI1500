@@ -17,10 +17,19 @@ export const saveTransacao = (transacao)=>{
     }
 
     transacoes.push(transacao);
-
     localStorage.setItem(TransacoesKey,JSON.stringify(transacoes));
 
 }
+
+export const deleteTransacao = (id) =>{
+
+    const transacoes = getTransacoes();
+ 
+     const newTransacoes = transacoes.filter((transacao)=> transacao.id!==id);
+     localStorage.setItem(TransacoesKey, JSON.stringify(newTransacoes))
+ 
+
+ }
 
 export const getTransacoes = ()=>{
 
@@ -31,4 +40,26 @@ export const getTransacoes = ()=>{
     }
 
     return transacoes;
+}
+
+export const getTransacao = (id)=>{
+
+    let transacao = getTransacoes();
+
+    // === => obter igualdade do valor e do tipo 
+    return transacao.find((transacao)=> transacao.id === id);
+
+
+}
+
+export const saveEdit = (id,transacao,contaContabil,moeda) =>{
+    const transacoes = getTransacoes();
+
+    const transacoesIndex = transacoes.findIndex((transacoesToEdit)=>transacoesToEdit.id===id);
+
+    transacoes[transacoesIndex].data = transacao.data;
+    transacoes[transacoesIndex].valor = transacao.valor;
+    transacoes[transacoesIndex].moedaId= contaContabil.moedaId;
+    transacoes[transacoesIndex].contaContabilId = moeda.contaContabilId
+    localStorage.setItem(TransacoesKey,JSON.stringify(transacoes))
 }

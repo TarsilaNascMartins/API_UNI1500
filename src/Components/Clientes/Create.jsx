@@ -34,7 +34,7 @@ return (
   
    <Form className="col-3 mt-5">
      <center> <h2>Cadastro de Clientes</h2></center>
-    <center> <img src="https://cdn-icons-png.flaticon.com/512/3126/3126589.png"alt="Image" height= "150" width="150"></img>
+    <center> <img src="https://cdn3d.iconscout.com/3d/premium/thumb/businessman-doing-handshake-6342536-5230967.png"alt="Image" height= "200" width="200"></img>
      </center><Form.Group className="mb-3" controlId="formBasicEmail">
        
        <Form.Label>Nome Cliente</Form.Label>
