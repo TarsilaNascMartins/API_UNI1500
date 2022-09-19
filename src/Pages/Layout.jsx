@@ -20,6 +20,8 @@ const Layout =()=>{
             <Nav.Link><Link to ="/cliente">Clientes</Link></Nav.Link>
             <Nav.Link><Link to ="/funcionario">Funcionarios</Link></Nav.Link>
             <Nav.Link ><Link to="/transacoes">Transações</Link></Nav.Link>
+            <Nav.Link ><Link to="/bancos">Banco</Link></Nav.Link>
+            <Nav.Link ><Link to="/projetos">Projetos</Link></Nav.Link>
        </Nav>
         </Container>
       </Navbar>

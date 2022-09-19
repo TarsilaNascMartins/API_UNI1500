@@ -11,6 +11,8 @@ import ContasContabeis from "./Pages/ContasContabeis";
 import Clientes from "./Pages/Clientes";
 import Funcionario from "./Pages/Funcionarios";
 import Transacoes from "./Pages/Transacoes";
+import Bancos from "./Pages/Banco";
+import Projetos from "./Pages/Projetos";
 
 function App() {
   return <>
@@ -27,6 +29,8 @@ function App() {
                 <Route path="cliente" element={<Clientes/>}/>
                 <Route path="funcionario" element={<Funcionario/>}/>
                 <Route path="transacoes" element={<Transacoes/>}/>
+                <Route path="bancos" element={<Bancos/>}/>
+                <Route path="projetos" element={<Projetos/>}/>
         </Route>
 
     </Routes>
