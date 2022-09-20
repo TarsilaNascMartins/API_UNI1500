@@ -25,7 +25,7 @@ return (
   <p><div className="d-flex flex-column align-items-center">
      <Form className="col-3 mt-5">
      <center> <h2>Cadastro de Bancos</h2></center>
-    <center> <img src="https://cdn3d.iconscout.com/3d/premium/thumb/businessman-doing-handshake-6342536-5230967.png"alt="Image" height= "200" width="200"></img>
+    <center> <img src="https://cdn3d.iconscout.com/3d/premium/thumb/bank-4615803-3832896.png"alt="Image" height= "200" width="200"></img>
      </center><Form.Group className="mb-3" controlId="formBasicEmail">
        
        <Form.Label>Nome do Banco</Form.Label>

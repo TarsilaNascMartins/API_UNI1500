@@ -9,14 +9,6 @@ function Edit({setComponenteAtual,idTransacao}){
     const[moedas,setMoedas] = useState([]);
     const[contasContabeis,setContasContabeis] = useState([]);
 
-    const [data,setData] = useState ("");
-
-    const [valor, setValor] = useState([]);
-
-    const [moedaId,setMoedaId] = useState ("");
-
-    const [contaContabilId,setContaContabilId] = useState ("");
-  
     const [transacao, setTransacao] = useState(
         {
             data: '',
@@ -26,23 +18,18 @@ function Edit({setComponenteAtual,idTransacao}){
         }
     )
 
-
     useEffect(()=>{
      
-        const moedaId = setMoedas(getMoedas());
-        const contaContabilId = setContasContabeis(getContasContabeis());
-        const transacao = getTransacao(idTransacao);
-                setData (transacao.data); //NOME DA CONTAAA ANTERIOR
-                setValor(transacao.valor);// NOME DOS NREF DO ID CORRESPONDENTE
-                setMoedaId(transacao.moedaId);
-                setContaContabilId(transacao.contaContabilId)
-           
+        setMoedas(getMoedas());
+        setContasContabeis(getContasContabeis());
+        setTransacao(getTransacao(idTransacao));
+              
         },[])
 
       
-
     const updateTransacao = (event)=>{
         const value = event.target.value;
+        
         setTransacao(
             {
                 ...transacao,
@@ -54,16 +41,10 @@ function Edit({setComponenteAtual,idTransacao}){
     const save = (event)=>{
         event.preventDefault();
 
-        const transacao = {
-            data,
-            valor,
-            moedaId,
-            contaContabilId,
-          }
-      
         saveEdit(idTransacao,transacao);
      
         setComponenteAtual('Index');
+
         console.log(getTransacao());
     }
 
@@ -72,32 +53,38 @@ function Edit({setComponenteAtual,idTransacao}){
     <p></p>
     <h2>Edição de transação</h2>
     <center> <img src="https://cdn3d.iconscout.com/3d/premium/thumb/budget-calculation-4899105-4081253.png"alt="Image" height= "150" width="150"></img></center>
-    <Form>
+    <Form  onSubmit={(event)=>save(event)}>
         <Form.Label>Data</Form.Label>
-        <Form.Control type="date" name="data" value = {data} onChange={(event)=>updateTransacao(event)}></Form.Control>
+        <Form.Control type="date" name="data" defaultValue = {transacao.data} onChange={(event)=>updateTransacao(event)}></Form.Control>
+       
         <Form.Label>Valor</Form.Label>
-        <Form.Control type="number" name="valor" value = {valor}onChange={(event)=>updateTransacao(event)}></Form.Control>
+        <Form.Control type="number" name="valor" value= {transacao.valor} onChange={(event)=>updateTransacao(event)}></Form.Control>
+       
         <Form.Label>Moeda</Form.Label>
-        <Form.Select name="moedaId" value = {moedaId} onChange={(event)=>updateTransacao(event)}>
+        <Form.Select name="moedaId" value = {transacao.moedaId} onChange={(event)=>updateTransacao(event)}>
             <option>Selecione uma moeda...</option>
             {
                 moedas.map((moeda)=>{
-                    return <option key={moeda.id} value={moeda.id} >
+                  
+                    return <option 
+                    key={moeda.id} 
+                      type= "checkbox"
+                    value={moeda.id} >
                         {moeda.nome}
                     </option>
                 })
             }
         </Form.Select>
         <Form.Label>Conta contábil</Form.Label>
-        <Form.Select name="contaContabilId" value = {contaContabilId}>
+        <Form.Select name="contaContabilId" value = {transacao.contaContabilId} onChange={(event)=>updateTransacao(event)}>
             <option>Selecione uma conta contábil...</option>
             {
                 contasContabeis.map((contaContabil)=>{
-                    return  <option onChange={(event)=>updateTransacao(event,contaContabil)}
+                    return  <option 
                    key={contaContabil.id} 
                    type= "checkbox"
                     id={contaContabil.id}
-                    value={contaContabil.id}>
+                    >
                         {contaContabil.nome}
                         
                     </option>

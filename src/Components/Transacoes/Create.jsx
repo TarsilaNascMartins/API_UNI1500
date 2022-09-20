@@ -44,8 +44,10 @@ function Create({setComponenteAtual}) {
         <Form onSubmit={(event)=>save(event)}>
             <Form.Label>Data</Form.Label>
             <Form.Control type="date" name="data" onChange={(event)=>updateTransacao(event)}></Form.Control>
+
             <Form.Label>Valor</Form.Label>
             <Form.Control type="number" name="valor" onChange={(event)=>updateTransacao(event)}></Form.Control>
+            
             <Form.Label>Moeda</Form.Label>
             <Form.Select name="moedaId" onChange={(event)=>updateTransacao(event)}>
                 <option>Selecione uma moeda...</option>

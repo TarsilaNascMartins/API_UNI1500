@@ -9,7 +9,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 
 
 
-function Index({setComponenteAtual, setIdProjetoEdit}){
+function Index({setComponenteAtual, setProjetoEdit}){
 
 const [projetos, setProjetos] = useState([]);
 
@@ -26,7 +26,7 @@ const removeProjeto = (id)=>{
 }
 
 const setToEdit= (idProjeto)=>{
-    setIdProjetoEdit(idProjeto);
+    setProjetoEdit(idProjeto);
     setComponenteAtual("Edit")
 
 }

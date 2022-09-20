@@ -7,8 +7,7 @@ import { getCliente, saveEdit} from './../../Services/Clientes'
 
 function Edit({setComponenteAtual,idCliente}){
 
-    const [name,setName] = useState ("");
-    const [cpf, setCPF] = useState([]);
+
   
   const [cliente,setCliente] = useState(
     {
@@ -20,9 +19,7 @@ function Edit({setComponenteAtual,idCliente}){
    
         useEffect(()=> {
 
-                const cliente = getCliente(idCliente);
-                setName (cliente.nome); 
-                setCPF(cliente.ncpf);
+                setCliente(getCliente(idCliente));
         },[])
         
           const updateCliente = (event)=>{
@@ -39,11 +36,6 @@ function Edit({setComponenteAtual,idCliente}){
         
         const create = (event) => {
             event.preventDefault();
-            const cliente = {
-                nome: name,
-                ncpf: cpf,
-          
-            }
         
             saveEdit(idCliente,cliente);
 
@@ -63,12 +55,12 @@ return(
      </center><Form.Group className="mb-3" controlId="formBasicEmail">
        
        <Form.Label>Nome Cliente</Form.Label>
-       <Form.Control value ={name} onChange={(event)=>{updateCliente(event)}}  name='name' type="cliente" placeholder="Insira o nome do cliente" />
+       <Form.Control defaultValue ={cliente.nome} onChange={(event)=>{updateCliente(event)}}  name='nome' type="cliente" placeholder="Insira o nome do cliente" />
        <Form.Text className="text-muted">
        </Form.Text>
 
        <Form.Label>CPF</Form.Label>
-       <Form.Control value ={cpf} onChange={(event)=>{updateCliente(event)}} name='cpf' type="cliente" placeholder="Insira o cpf" />
+       <Form.Control defaultValue ={cliente.ncpf} onChange={(event)=>{updateCliente(event)}} name='ncpf' type="cliente" placeholder="Insira o cpf" />
        <Form.Text className="text-muted">
        </Form.Text>
        

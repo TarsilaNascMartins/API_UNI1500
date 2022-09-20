@@ -52,7 +52,7 @@ export const getProjeto = (id)=>{
 
 }
 
-export const saveEdit = (id,projeto,cliente) =>{
+export const saveEdit = (id,projeto) =>{
     const projetos = getProjetos();
 
     const projetosIndex = projetos.findIndex((projetosToEdit)=>projetosToEdit.id===id);
@@ -60,7 +60,7 @@ export const saveEdit = (id,projeto,cliente) =>{
     projetos[projetosIndex].nome = projeto.nome;
     projetos[projetosIndex].data = projeto.data;
     projetos[projetosIndex].responsavel = projeto.responsavel;
-    projetos[projetosIndex].cpf= cliente.cpf;
+    projetos[projetosIndex].cpf= projeto.cpf;
     
     localStorage.setItem(ProjetosKey,JSON.stringify(projetos))
 }

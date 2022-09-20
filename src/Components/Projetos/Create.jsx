@@ -38,7 +38,7 @@ function Create({setComponenteAtual}) {
     return <div className="d-flex flex-column align-items-center">
         <p></p>
         <h2>Cadastro de Projetos</h2>
-        <center> <img src="https://cdn3d.iconscout.com/3d/premium/thumb/budget-calculation-4899105-4081253.png"alt="Image" height= "150" width="150"></img></center>
+        <center> <img src="https://cdn3d.iconscout.com/3d/premium/thumb/tax-form-5926088-4897886.png"alt="Image" height= "150" width="150"></img></center>
         <Form onSubmit={(event)=>save(event)}>
             <Form.Label>Nome Projeto</Form.Label>
             <Form.Control type="name" name="nome" onChange={(event)=>updateProjeto(event)}></Form.Control>
@@ -50,11 +50,14 @@ function Create({setComponenteAtual}) {
             <Form.Control type="name" name="responsavel" onChange={(event)=>updateProjeto(event)}></Form.Control>
 
             <Form.Label>Cliente</Form.Label>
-            <Form.Select name="cpf" onChange={(event)=>updateProjeto(event)}>
+            <Form.Select name="cpf" value = {projeto.cpf} onChange={(event)=>updateProjeto(event)}>
                 <option>Selecione o nome do cliente...</option>
                 {
                     clientes.map((cliente)=>{
-                        return <option key={cliente.id} value={cliente.cpf} >
+                        return <option
+                         key={cliente.id} 
+                         type= "checkbox"
+                        value={cliente.cpf} >
                             {cliente.nome}
                         </option>
                     })

@@ -5,7 +5,7 @@ import {saveContasContabeis,getContaContabil} from  './../../Services/ContasCont
 
 function Create({setComponenteAtual}){
 
-  const [name,setName] = useState ("");
+  const [nome,setName] = useState ("");
 
   const [nref, setNREF] = useState([]);
 
@@ -14,8 +14,7 @@ function Create({setComponenteAtual}){
 const create = (event) => {
   event.preventDefault();
   const contaContabil = {
-    nome: name,
-    
+    nome,
      nref,
 
   }
@@ -40,7 +39,7 @@ return (
     <center> <img src="https://edufinance.com.br/wp-content/uploads/2020/10/moeda.png"alt="Image" height= "150" width="200"></img>
      </center><Form.Group className="mb-3" controlId="formBasicEmail">
        
-       <Form.Control onChange={((e)=>setName(e.target.value))} name='name' type="contaContabil" placeholder="Insira o nome da Conta Contabil" />
+       <Form.Control onChange={((e)=>setName(e.target.value))} name='nome' type="contaContabil" placeholder="Insira o nome da Conta Contabil" />
        <Form.Text className="text-muted">
        </Form.Text>
        <Form.Control onChange={((e)=>setNREF(e.target.value))} name='nref' type="contaContabil" placeholder="Insira o numero de referência" />

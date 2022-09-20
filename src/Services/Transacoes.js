@@ -52,14 +52,14 @@ export const getTransacao = (id)=>{
 
 }
 
-export const saveEdit = (id,transacao,contaContabil,moeda) =>{
+export const saveEdit = (id,transacao) =>{
     const transacoes = getTransacoes();
 
     const transacoesIndex = transacoes.findIndex((transacoesToEdit)=>transacoesToEdit.id===id);
 
     transacoes[transacoesIndex].data = transacao.data;
     transacoes[transacoesIndex].valor = transacao.valor;
-    transacoes[transacoesIndex].moedaId= contaContabil.moedaId;
-    transacoes[transacoesIndex].contaContabilId = moeda.contaContabilId
+    transacoes[transacoesIndex].moedaId= transacao.moedaId;
+    transacoes[transacoesIndex].contaContabilId = transacao.contaContabilId
     localStorage.setItem(TransacoesKey,JSON.stringify(transacoes))
 }

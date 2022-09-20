@@ -7,22 +7,20 @@ import { getFuncionario, saveEdit} from './../../Services/Funcionarios'
 
 function Edit({setComponenteAtual,idFuncionario}){
 
-    const [name,setName] = useState ("");
-    const [cpf, setCPF] = useState([]);
+ 
   
   const [funcionario,setFuncionario] = useState(
     {
-        nome: '',
-        ncpf: '',
+        name: '',
+        cpf: '',
     
     }
 )
    
         useEffect(()=> {
 
-                const funcionario = getFuncionario(idFuncionario);
-                setName (funcionario.nome); 
-                setCPF(funcionario.ncpf);
+                setFuncionario( getFuncionario(idFuncionario));
+              
         },[])
         
           const updateFuncionario = (event)=>{
@@ -39,11 +37,6 @@ function Edit({setComponenteAtual,idFuncionario}){
         
         const create = (event) => {
             event.preventDefault();
-            const funcionario = {
-                nome: name,
-                ncpf: cpf,
-          
-            }
         
             saveEdit(idFuncionario,funcionario);
 
@@ -63,12 +56,12 @@ return(
      </center><Form.Group className="mb-3" controlId="formBasicEmail">
        
        <Form.Label>Nome Funcionário</Form.Label>
-       <Form.Control value= {name} onChange={(event)=>{updateFuncionario(event)}}  name='name' type="funcionario" placeholder="Insira o nome do funcionário" />
+       <Form.Control defaultValue= {funcionario.name} onChange={(event)=>{updateFuncionario(event)}}  name='name' type="funcionario" placeholder="Insira o nome do funcionário" />
        <Form.Text className="text-muted">
        </Form.Text>
 
        <Form.Label>Número Matrícula</Form.Label>
-       <Form.Control value={cpf} onChange={(event)=>{updateFuncionario(event)}}  name='cpf' type="funcionario" placeholder="Insira a matrícula" />
+       <Form.Control defaultValue={funcionario.cpf} onChange={(event)=>{updateFuncionario(event)}}  name='cpf' type="funcionario" placeholder="Insira a matrícula" />
        <Form.Text className="text-muted">
        </Form.Text>
        

@@ -64,7 +64,7 @@ export const saveEdit = (id,funcionario) =>{
 
         const funcionarioIndex = funcionarios.findIndex((funcionarioToEdit)=>funcionarioToEdit.id===id);
 
-        funcionarios[funcionarioIndex].nome = funcionario.nome;
+        funcionarios[funcionarioIndex].name = funcionario.name;
         funcionarios[funcionarioIndex].cpf = funcionario.cpf;
         localStorage.setItem(funcionarioKey,JSON.stringify(funcionarios))
 }

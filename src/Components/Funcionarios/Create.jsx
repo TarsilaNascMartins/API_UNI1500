@@ -12,8 +12,8 @@ function Create({setComponenteAtual}){
 const create = (event) => {
   event.preventDefault();
   const funcionario = {
-    nome: name,
-    ncpf: cpf,
+    name,
+    cpf,
 
   }
 

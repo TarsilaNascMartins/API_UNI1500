@@ -5,15 +5,15 @@ import {saveClientes,getClientes} from  './../../Services/Clientes'
 
 function Create({setComponenteAtual}){
 
-  const [name,setName] = useState ("");
-  const [cpf, setCPF] = useState([]);
+  const [nome,setName] = useState ("");
+  const [ncpf, setCPF] = useState([]);
   
 
 const create = (event) => {
   event.preventDefault();
   const cliente = {
-    nome: name,
-    ncpf: cpf,
+    nome,
+    ncpf,
 
   }
 
@@ -38,12 +38,12 @@ return (
      </center><Form.Group className="mb-3" controlId="formBasicEmail">
        
        <Form.Label>Nome Cliente</Form.Label>
-       <Form.Control  onChange={((e)=>setName(e.target.value))}  name='name' type="cliente" placeholder="Insira o nome do cliente" />
+       <Form.Control  onChange={((e)=>setName(e.target.value))}  name='nome' type="cliente" placeholder="Insira o nome do cliente" />
        <Form.Text className="text-muted">
        </Form.Text>
 
        <Form.Label>CPF</Form.Label>
-       <Form.Control  onChange={((e)=>setCPF(e.target.value))} name='cpf' type="cliente" placeholder="Insira o cpf" />
+       <Form.Control  onChange={((e)=>setCPF(e.target.value))} name='ncpf' type="cliente" placeholder="Insira o cpf" />
        <Form.Text className="text-muted">
        </Form.Text>
        

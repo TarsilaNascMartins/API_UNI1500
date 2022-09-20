@@ -59,8 +59,8 @@ return <div className='m-3'>
 
       return   <tr key={funcionario.key}>
                 <td>{funcionario.id} </td>
-                <td>{funcionario.nome} </td>
-                <td>{funcionario.ncpf} </td>
+                <td>{funcionario.name} </td>
+                <td>{funcionario.cpf} </td>
                <td >
                <Dropdown>
         <Dropdown.Toggle id="dropdown-button-dark-example1" variant="secondary">Opções</Dropdown.Toggle>

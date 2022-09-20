@@ -13,24 +13,19 @@ function Edit({setComponenteAtual,idContaContabil}){
   const [contaContabil,setContaContabil] = useState(
     {
         nome:'',
-        nRef:'',
+        nref:'',
     }
 )
-    const [name,setName] = useState ("");
-
-  const [nref, setNREF] = useState([]);
-
+  
 
 //RETORNANDO OS VALORES QUE ESTAVAM DEFINIDOS
 //usado para quando um estado é alterado, randerizado
         useEffect(()=> {
 
-                const contaContabeis = getContaContabil(idContaContabil);
-                setName (contaContabeis.nome); //NOME DA CONTAAA ANTERIOR
-                setNREF(contaContabeis.nref);// NOME DOS NREF DO ID CORRESPONDENTE
+                setContaContabil(getContaContabil(idContaContabil)) ;
+              
         },[])
-        // recebe um array vazio, onde só executa uma vez, ou seja quando o componente carrega
-
+     
       
         
           const updateContaContabil = (event)=>{
@@ -47,12 +42,7 @@ function Edit({setComponenteAtual,idContaContabil}){
         
         const create = (event) => {
             event.preventDefault();
-            const contaContabil = {
-              nome: name,
-              nref,
-          
-            }
-        
+                 
             saveEdit(idContaContabil,contaContabil);
 
             setComponenteAtual("Index");
@@ -73,10 +63,11 @@ function Edit({setComponenteAtual,idContaContabil}){
               <center> <img src="https://edufinance.com.br/wp-content/uploads/2020/10/moeda.png"alt="Image" height= "150" width="200"></img>
                </center><Form.Group className="mb-3" controlId="formBasicEmail">
                  
-                 <Form.Control value = {name} onChange={(event)=>{updateContaContabil(event)}} name='name' type="contaContabil" placeholder="Insira o nome da Conta Contabil" />
+                 <Form.Control defaultValue= {contaContabil.nome} onChange={(event)=>{updateContaContabil(event)}} name='nome' type="contaContabil" placeholder="Insira o nome da Conta Contabil" />
                  <Form.Text className="text-muted">
                  </Form.Text>
-                 <Form.Control value = {nref} onChange={(event)=>{updateContaContabil(event)}} name='nref' type="contaContabil" placeholder="Insira o numero de referência" />
+
+                 <Form.Control defaultValue = {contaContabil.nref} onChange={(event)=>{updateContaContabil(event)}} name='nref' type="contaContabil" placeholder="Insira o numero de referência" />
                  <Form.Text className="text-muted">
                  </Form.Text>
                  

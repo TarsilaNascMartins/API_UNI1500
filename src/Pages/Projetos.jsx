@@ -9,11 +9,11 @@ function Projetos(){
 
     const [componenteAtual,setComponenteAtual] = useState("Index");
 
-    const [idProjetoEdit,setIdProjetoEdit] = useState(0);
+    const [idProjetoEdit,setProjetoEdit] = useState(0);
 
     switch (componenteAtual){
         case"Index":
-         return <Index setComponenteAtual ={setComponenteAtual} setIdProjetoEdit = {setIdProjetoEdit}/>
+         return <Index setComponenteAtual ={setComponenteAtual} setProjetoEdit = {setProjetoEdit}/>
             
          case "Create":
             return<Create setComponenteAtual ={setComponenteAtual}/>

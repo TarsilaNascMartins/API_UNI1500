@@ -65,6 +65,6 @@ export const saveEdit = (id,cliente) =>{
         const clienteIndex = clientes.findIndex((clienteToEdit)=>clienteToEdit.id===id);
 
         clientes[clienteIndex].nome = cliente.nome;
-        clientes[clienteIndex].cpf = cliente.cpf;
+        clientes[clienteIndex].ncpf = cliente.ncpf;
         localStorage.setItem(clienteKey,JSON.stringify(clientes))
 }
